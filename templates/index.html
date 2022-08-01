@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inhibtion Zone Detector</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../static/images/favicons/site.webmanifest">
+
+    <!-- plugin scripts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700%7CBarlow:300,400,500,600,700,800,900%7CPT+Sans:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap-select.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/jquery.mCustomScrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/vimns-icons.css') }}">
+
+
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/responsive.css') }}">
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <div class="preloader">
+        <img src="../static/images/loader.png" class="preloader__image" alt="">
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+        <header class="site-header-one">
+            <nav class="main-nav__one stricky">
+                <div class="container-fluid">
+                    <div class="main-nav__logo-box">
+                        <a href="{{ url_for('index') }}">
+                            <img width="137" src="../static/images/logo-1-1.png" alt="">
+                        </a>
+                        <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i></a>
+                    </div><!-- /.main-nav__logo-box -->
+                    <div class="main-nav__main-navigation">
+                        <ul class=" main-nav__navigation-box">
+                            <li class="dropdown">
+                                <a href="{{ url_for('index') }}">Home</a>
+                                
+                            </li>
+                            <li>
+                                <a href="{{ url_for('about') }}">About</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('contact') }}">Contact</a>
+                            </li>
+                        </ul>
+                    </div><!-- /.main-nav__main-navigation -->
+                    <div class="main-nav__cta">
+                        <div class="main-nav__cta-icon">
+                            <i class="vimns-icon-phone"></i>
+                        </div><!-- /.main-nav__cta-icon -->
+                        <div class="main-nav__cta-content">
+                            <h3><a href="http://www.enmv.agrinet.tn/index.php/fr/">www.enmv.agrinet.tn</a></h3>
+                        </div><!-- /.main-nav__cta-content -->
+                    </div><!-- /.main-nav__cta -->
+                    <div class="main-nav__right">
+                        <a href="{{ url_for('upload') }}" class="main-nav__btn">Detection Inhibition Zones</a><!-- /.main-nav__btn -->
+                    </div><!-- /.main-nav__right -->
+                </div><!-- /.container-fluid -->
+            </nav><!-- /.main-nav__one -->
+
+        </header><!-- /.site-header-one -->
+
+        <section class="banner-one">
+            <img src="../static/images/shapes/banner-bg-shape-1-1.png" alt="" class="banner-one__moc">
+            <img src="../static/images/index.png" alt="" class="banner-one__moc" style= " width:300px; height:250px; background-color: blue;margin: 250px 10% 70% 95%;border-radius: 250px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        
+                        <div class="banner-one__content">
+                            <h3>What to know about <br>
+                                 <span>Antibiotics?</span></h3>
+                            <a href="{{ url_for('upload') }}" class="thm-btn banner-one__btn">Detection Inhibition Zones ?</a>
+                            <!-- /.thm-btn banner-one__btn -->
+                        </div><!-- /.banner-one__content -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.banner-one -->
+
+        <section class="about-one">
+            <img src="{{ url_for('static',filename='images/resources/virus-shape-1-1.png') }}"class="about-one__virus" alt="">
+            <div class="container">
+                <div class="inner-container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="about-one__images wow fadeInLeft" data-wow-animation-duration="1500ms">
+                                <img src="{{ url_for('static',filename='images/resources/about-1-1.jpg') }}" alt="">
+                                <img src="{{ url_for('static',filename='images/original-64103.jpg') }}" alt="">
+                            </div><!-- /.about-one__images -->
+                            <div class="about-one__fact-wrap">
+                                <div class="about-one__fact">
+                                    <div class="about-one__fact-icon">
+                                        <i class="vimns-icon-mask"></i>
+                                    </div><!-- /.about-one__fact-icon -->
+                                    <div class="about-one__fact-content">
+                                        <h4>About Antibiotics?</h4>
+                                    </div><!-- /.about-one__fact-content -->
+                                </div><!-- /.about-one__fact -->
+                            </div><!-- /.about-one__fact-wrap -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <div class="about-one__content">
+                                <div class="block-title text-left">
+                                    <p></p>
+                                    <h3>Introduction</h3>
+                                </div><!-- /.block-title -->
+                                <div class="about-one__icon-box">
+                                    <div class="about-one__icon">
+                                        <i class="vimns-icon-virus"></i>
+                                    </div><!-- /.about-one__icon -->
+                                    <div class="about-one__icon-content">
+                                        <p>Antibiotics are powerful medicines that fight certain infections and can save lives when used properly. 
+                                            They either stop bacteria from reproducing or destroy them.</p>
+                                        <p>Sometimes, however, the number of harmful bacteria is excessive, and the immune system cannot fight them all.
+                                             Antibiotics are useful in this scenario.</p>
+                                    </div><!-- /.about-one__icon-content -->
+                                </div><!-- /.about-one__icon-box -->
+                                <a href="{{ url_for('upload') }}" class="thm-btn about-one__btn">Detect inhibition Zone ? </a><!-- /.thm-btn about-one__btn -->
+                            </div><!-- /.about-one__content -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.inner-container -->
+            </div><!-- /.container -->
+        </section><!-- /.about-one -->
+
+        <section class="funfact-one">
+            <div class="container">
+                <img src="{{ url_for('static',filename='images/shapes/funfact-virus-1-1.png') }}" class="funfact-one__virus-1" alt="">
+
+                <!-- <h3><span class="counter"></span></h3> -->
+                <p>Millions of People are Infected by Virus<p>
+            </div><!-- /.container -->
+        </section><!-- /.funfact-one -->
+
+        <section class="service-one">
+            <div class="container">
+                <div class="block-title text-center">
+                    <h3>Antibiotics are Ineffective against viruses.</h3>
+                </div><!-- /.block-title -->
+
+                <div class="row no-gutters">
+                    <div class="col-lg-4 wow fadeInLeft" data-wow-animation-duration="1500ms">
+                        <div class="service-one__single">
+                            <div class="service-one__inner">
+                                <div class="service-one__image">
+                                    <img src="{{ url_for('static',filename='images/shapes/service-i-1.png') }}" alt="">
+                                </div><!-- /.service-one__image -->
+                                <p>A doctor prescribes antibiotics for the treatment of a bacterial infection.
+                                    If people overuse antibiotics or use them incorrectly, the bacteria might become resistant. This means that
+                                     the antibiotic becomes less effective against that type of bacterium.
+                                </p>
+                            </div><!-- /.service-one__inner -->
+
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4 wow fadeInUp" data-wow-animation-duration="1500ms">
+                        <div class="service-one__single">
+                            <div class="service-one__inner">
+                                <div class="service-one__image">
+                                    <img src="{{ url_for('static',filename='images/shapes/service-i-2.png') }}" alt="">
+
+                                </div><!-- /.service-one__image -->
+                                <p>Viruses cause most upper respiratory tract infections (URTIs), such as the common cold and flu. Antibiotics do not work against these viruses.</p>
+                            </div><!-- /.service-one__inner -->
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4 wow fadeInRight" data-wow-animation-duration="1500ms">
+                        <div class="service-one__single">
+                            <div class="service-one__inner">
+                                <div class="service-one__image">
+                                    <img src="{{ url_for('static',filename='images/shapes/service-i-3.png') }}" alt="">
+                                </div><!-- /.service-one__image -->
+                                <p>In some cases, a healthcare professional may provide antibiotics to prevent rather than treat an infection, as might be the case before surgery. This is the ‘prophylactic’ use of antibiotics. People commonly use these antibiotics before bowel and orthopedic surgery.<br></p>
+                            </div><!-- /.service-one__inner -->
+
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.service-one -->
+
+        <section class="testimonials-one" id="testimonials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="testimonials-one__image-block">
+                            <div class="owl-carousel owl-theme" id="sync2">
+                                <div class="item clearfix">
+                                    <div class="testimonials-one__image">
+                                        <img src="../static/images/diske.jpeg" class="testimonials-one__thumb"
+                                            alt="Awesome Image"
+                                            style="width: 400px;height: 400px;border-radius: 180px; " />
+                                    </div><!-- /.testimonials-one__image -->
+                                </div><!-- /.item -->
+                            </div><!-- /.owl-carousel owl-theme -->
+                        </div><!-- /.testimonials-one__image-block -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="testimonials-one__content">
+                            <div class="block-title text-left">
+                                <p></p>
+                                <h3>What About Our App :</h3>
+                            </div><!-- /.block-title -->
+
+                            <div class="owl-carousel owl-theme" id="sync1">
+                                <div class="item">
+                                    <div class="testimonials-one__single" data-thumb-img="../static/images/AS.jpg">
+                                        <p class="testimonials-one__text">
+                                            Antibiotic susceptibility testing specifies the effective antibiotic
+                                            dosage and formulates an empirical therapy profile for
+                                            the proper management of an individual patient's health against
+                                            life-threatening infections. Therefore, rapid diagnosis plays a central role
+                                            in the treatment of bacterial infection.
+                                        </p><!-- /.testimonials-one__text -->
+                                        <h4 style="margin-left: 30px;text-decoration: underline;">
+                                            Implementation Team Work :
+                                        </h4>
+                                        <ul align="center"
+                                            style="font-size: 15px; color: rgb(115, 129, 156); padding-top:5px">
+                                            <li>Othmani Oussama</li>
+                                            <li>Mosbah Amine</li>
+                                            <li>Dhaouadi Raouf</li>
+                                            <li>Yahyaoui Aymen</li>
+                                            <li>Ghassen Tahy</li>
+                                            <li>Messadi Lilia</li>
+                                        </ul>
+                                        <br>
+                                        <div align="center"
+                                            style="font-size: medium;color: rgb(34, 29, 61);text-decoration: dashed;padding: 10px 5px 10px 10px;">
+                                            Ministry of national defense<br>Fondok Jedid Military Academy<br>Department of Informatics<br>
+                                            <br>Laboratoire de Microbiologie, Ecole Nationale de Médecine Vétérinaire
+                                        </div>
+                                    </div><!-- /.testimonials-one__single -->
+                                </div><!-- /.item -->
+
+                            </div><!-- /.owl-carousel owl-theme -->
+                        </div><!-- /.testimonials-one__content -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.testimonials-one -->
+
+        <section class="cta-two wow fadeInUp" data-wow-animation-duration="1500ms" style="background-image: url(../static/images/background/test.jpg);">
+            <div class="container">
+                <a href="{{ url_for('contact') }}" class="thm-btn cta-two__btn">Contact With Us</a><!-- /.thm-btn cta-two__btn -->
+            </div><!-- /.container -->
+        </section><!-- /.cta-two -->
+
+        <footer class="site-footer-one site-footer-one__home-one">
+
+            <div class="site-footer-one__upper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="footer-widget footer-widget__about">
+                                <a href="{{ url_for('index') }}" class="footer-widget__logo">
+                                    <img src="{{ url_for('static',filename='images/loader.png') }}" alt="" width="137" >
+                                </a>
+                                <p></p>
+                            </div><!-- /.footer-widget footer-widget__about -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-3">
+                            <div class="footer-widget footer-widget__links">
+                                <h3 class="footer-widget__title">Quick Links</h3><!-- /.footer-widget__title -->
+                                <div class="footer-widget__links-wrap">
+                                    <ul class="list-unstyled footer-widget__links-list">
+                                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                                        <li><a href="{{ url_for('about') }}">About</a></li>
+                                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                                    </ul><!-- /.list-unstyled -->
+                                </div><!-- /.footer-widget__links-wrap -->
+
+                            </div><!-- /.footer-widget footer-widget__about -->
+                        </div><!-- /.col-lg-3 -->
+                        <div class="col-lg-3">
+                            <div class="footer-widget footer-widget__contact">
+                                <h3 class="footer-widget__title">Email</h3><!-- /.footer-widget__title -->
+                                <p><a href="enmv@iresa.agrinet.tn">enmv@iresa.agrinet.tn</a></p>
+                            </div><!-- /.footer-widget footer-widget__contact -->
+                        </div><!-- /.col-lg-3 -->
+                        <div class="col-lg-2 d-flex">
+                            <div class="footer-widget my-auto">
+                                <div class="footer-widget__social">
+                                    <a href="#" class="fab fa-facebook-square" href="https://www.facebook.com/vinawebsolution"></a>
+                                </div><!-- /.footer-widget__social -->
+                            </div><!-- /.footer-widget -->
+                        </div><!-- /.col-lg-2 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer-one__upper -->
+            <div class="site-footer-one__bottom">
+                <div class="container">
+                    <p>© copyright 2022 by <a href="#">El Othmani Oussama</a></p>
+                </div><!-- /.container -->
+            </div><!-- /.site-footer-one__bottom -->
+        </footer><!-- /.site-footer-one -->
+    </div><!-- /.page-wrapper -->
+
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <div class="side-menu__block">
+
+
+        <div class="side-menu__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <div class="side-menu__top justify-content-end">
+
+                <a href="#" class="side-menu__toggler side-menu__close-btn"><img src="{{ url_for('static',filename='images/shapes/close-1-1.png') }}" alt=""></a>
+            </div><!-- /.side-menu__top -->
+
+
+            <nav class="mobile-nav__container">
+                <!-- content is loading via js -->
+            </nav>
+            <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+            <div class="side-menu__content">
+                <p></p>
+                <p><a href="http://www.enmv.agrinet.tn/index.php/fr/">www.enmv.agrinet.tn</a> <br> <a href=":(+216) 71 552 200">(+216) 71 552 200</a></p>
+                <div class="side-menu__social">
+                    <a href="#" class="fab fa-facebook-square" href="https://www.facebook.com/vinawebsolution"></a>
+                </div>
+            </div><!-- /.side-menu__content -->
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+
+
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/waypoints.min.js"></script>
+    <script src="../static/js/jquery.counterup.min.js"></script>
+    <script src="../static/js/TweenMax.min.js"></script>
+    <script src="../static/js/wow.js"></script>
+    <script src="../static/js/jquery.magnific-popup.min.js"></script>
+    <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../static/js/jquery.validate.min.js"></script>
+    <script src="../static/js/bootstrap-select.min.js"></script>
+    <script src="../static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../static/js/bootstrap-datepicker.min.js"></script>
+    <script src="../static/js/isotope.js"></script>
+
+    <!-- template scripts -->
+    <script src="../static/js/theme.js"></script>
+    <script src="../static/js/testimonials-owl.carousel.config.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SEGlib Modèle | Inhibition Zone Detector</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../static/images/favicons/site.webmanifest">
+
+    <!-- plugin scripts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700%7CBarlow:300,400,500,600,700,800,900%7CPT+Sans:400,700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../static/css/animate.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../static/css/magnific-popup.css">
+    <link rel="stylesheet" href="../static/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../static/css/vimns-icons.css">
+
+
+
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <div class="preloader">
+        <img src="../static/images/loader.png" class="preloader__image" alt="">
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+
+
+        <header class="site-header-one">
+            <nav class="main-nav__one stricky">
+                <div class="container-fluid">
+                    <div class="main-nav__logo-box">
+                        <a href="{{ url_for('index') }}">
+                            <img width="137" src="../static/images/logo-1-1.png" alt="">
+                        </a>
+                        <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i></a>
+                    </div><!-- /.main-nav__logo-box -->
+                    <div class="main-nav__main-navigation">
+                        <ul class=" main-nav__navigation-box">
+                            <li class="dropdown">
+                                <a href="{{ url_for('index') }}">Home</a>
+                                
+                            </li>
+                            <li>
+                                <a href="{{ url_for('about') }}">About</a>
+                            </li>
+                            <li>
+                                <a href="{{ url_for('contact') }}">Contact</a>
+                            </li>
+                        </ul>
+                    </div><!-- /.main-nav__main-navigation -->
+                    <div class="main-nav__cta">
+                        <div class="main-nav__cta-icon">
+                            <i class="vimns-icon-phone"></i>
+                        </div><!-- /.main-nav__cta-icon -->
+                        <div class="main-nav__cta-content">
+                            <h3><a href="tel:71 552 200">71 552 200</a></h3>
+                        </div><!-- /.main-nav__cta-content -->
+                    </div><!-- /.main-nav__cta -->
+                    <div class="main-nav__right">
+                        <a href="{{ url_for('upload') }}" class="main-nav__btn">Detections Modèles</a><!-- /.main-nav__btn -->
+                    </div><!-- /.main-nav__right -->
+                </div><!-- /.container-fluid -->
+            </nav><!-- /.main-nav__one -->
+
+        </header><!-- /.site-header-one -->
+
+
+        <section class="page-header">
+            <div class="container">
+                <h2>Segmentation Detection Results</h2>
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><span>Results</span></li>
+                </ul><!-- /.thm-breadcrumb -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+
+        <section class="about-three">
+            <div class="container">
+                <div class="block-title text-center">
+                    <h3 style="font-size: 70px; margin-top: -60px;">Input Image</h3>
+                </div><!-- /.block-title -->
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="about-three__image">
+                            <!-- <img src="assets/images/resources/about-2-1.png" alt=""> -->
+                        </div><!-- /.about-three__image -->
+                        <div>
+                            <img src="../static/images/shapes/funfact-virus-1-1.png" style="padding-left: 50px;" class="funfact-one__virus-1" alt="">
+                            
+                        </div><!-- /.about-three__title -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-8" style="padding-bottom: 40px">
+                        
+                            <img src="../static/images/seg.jpg" height="320px" width="380px" style="margin-top: -20px;" alt="">
+                            <img src="../static/images/shapes/funfact-virus-1-2.png" style="padding-right: 50px" class="funfact-one__virus-2" alt="">
+                            <form action="#" method="post" enctype="multipart/form-data">
+                                <input type="file" id="upload" name="image" required="true" class="custom-file-upload btn btn-primary" style="margin-top: 8px; margin-right: 10px;">
+                                <input type="submit" value="Prediction" class="custom-file-upload btn btn-primary" style="margin-top: 8px; margin-right: 10px;">
+                            </form>
+                        <!-- /.about-three__image -->
+                    </div><!-- /.col-lg-8 -->
+                    <div class="col-lg-6" style="padding-left: 100px;">
+                        <div class="card" style="width: 30rem;">
+                        <p class="card-title" style="text-align: center; padding-top: 10px;padding-bottom: 10px;color:white; background-color:#112559;">Input Image</p>
+                        <img style="padding: 5px 5px 5px 5px ;width: auto;" src="{{ url_for('static',filename='uploads/')}}{{ img_name }}" alt="" width="{{ w }}" height="400 px">
+                    
+                        </div>
+                        </div><!-- Card Ends< -->
+    
+    
+                        <div class="col-lg-6">
+                        <div class="card" style="width: 30rem;">
+                        <p class="card-title" style="text-align: center; padding-top: 10px;padding-bottom: 10px;color:white; background-color:#112559;">SEGlib Classification</p>
+                        <img style="padding: 5px 5px 5px 5px ;width: auto;"src="{{ url_for('static',filename='predictMod2/')}}{{ img_name }}" alt="" width="{{ w }}" height="400 px">
+                        </div>
+                        </div><!-- Card Ends< -->
+
+                    
+                </div><!-- /.row -->
+                
+            </div><!-- /.container -->
+        </section><!-- /.about-three -->
+
+        {% if fileupload1  %}
+        <section class="testimonials-one" id="testimonials">
+            <div class="container">
+                <div class="row">
+                    <div style="font-size: 40px;color:rgb(78, 17, 7);margin: auto;font-style: oblique;width: 100%;">
+                        <h3 align="center">Mesure Inhibition  Zones : </h3> 
+                    </div> 
+                <table class="t1" style="margin: 10px 20px 30px 10px;border: 4px double rgb(40, 32, 21);border-radius: 5px;width: 100%;">
+                        <tr style="margin:480px">
+                            <th style="color: rgb(26, 41, 41); font-weight: bold;margin: auto;">Index of antib : </th>
+                            {%for i in message%} 
+                            <td>{{ i }}</td>
+                            {%endfor%}
+                        </tr>
+                        
+                      <tr style="margin:480px">
+                        <th style="color:rgb(26, 41, 41);font-weight: bold;margin: auto;">Diametre (mm) : </th>
+                        {%for j in mess1%} 
+                          <td>{{ j }}</td>
+                          {%endfor%}
+                    </tr> 
+                        
+    
+                    </table>
+                    <div style="font-size: 40px;color:rgb(78, 17, 7);margin: auto;font-style: oblique;width: 100%;">
+                        <h3 align="center">static: </h3> 
+                    </div>
+                   
+                        <img style="padding: 5px 5px 5px 5px ;width: 100%;" src="{{ url_for('static',filename='FigureStat2/')}}{{ img_name1 }}" alt="" width="500px" height="500 px"><br>
+                        <img style="padding: 5px 5px 5px 5px ;width: 100%;" src="{{ url_for('static',filename='FigureStat2/')}}{{ img_name2 }}" alt="" width="500px" height="500 px"><br>
+                        <img style="padding: 5px 5px 5px 5px ;width: 100%;" src="{{ url_for('static',filename='FigureStat2/')}}{{ img_name3 }}" alt="" width="500px" height="500 px"><br>
+                        <img style="padding: 5px 5px 5px 5px ;width: 100%;" src="{{ url_for('static',filename='FigureStat2/')}}{{ img_name4 }}" alt="" width="500px" height="500 px"><br>
+                        <img style="padding: 5px 5px 5px 5px ;width: 100%;" src="{{ url_for('static',filename='FigureStat2/')}}{{ img_name5 }}" alt="" width="500px" height="500 px"><br>
+                        <img style="padding: 5px 5px 5px 5px ;width: 100%;" src="{{ url_for('static',filename='FigureStat2/')}}{{ img_name6 }}" alt="" width="500px" height="500 px"><br>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.testimonials-one -->
+
+
+
+        
+        {% endif %}
+
+        <footer class="site-footer-one site-footer-one__home-one">
+
+            <div class="site-footer-one__upper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="footer-widget footer-widget__about">
+                                <a href="{{ url_for('index') }}" class="footer-widget__logo">
+                                    <img width="137" src="../static/images/loader.png" alt="">
+                                </a>
+                                <p></p>
+                            </div><!-- /.footer-widget footer-widget__about -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-3">
+                            <div class="footer-widget footer-widget__links">
+                                <h3 class="footer-widget__title">Quick Links : </h3><!-- /.footer-widget__title -->
+                                <div class="footer-widget__links-wrap">
+                                    <ul class="list-unstyled footer-widget__links-list">
+                                        <li><a href="{{ url_for('about') }}">About</a></li>
+                                        
+                                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                                    </ul><!-- /.list-unstyled -->
+                                </div><!-- /.footer-widget__links-wrap -->
+
+                            </div><!-- /.footer-widget footer-widget__about -->
+                        </div><!-- /.col-lg-3 -->
+                        <div class="col-lg-3">
+                            <div class="footer-widget footer-widget__contact">
+                                <h3 class="footer-widget__title">Contact</h3><!-- /.footer-widget__title -->
+                                <p><a href="tel:71 552 200">71 552 200</a></p>
+                                <p><a href="http://www.enmv.agrinet.tn/index.php/fr/">www.enmv.agrinet.tn</a></p>
+                                <p> Sidi Thabet
+                                    <p>2020 Ariana, Tunisie</p></p>
+                            </div><!-- /.footer-widget footer-widget__contact -->
+                        </div><!-- /.col-lg-3 -->
+                        <div class="col-lg-2 d-flex">
+                            <div class="footer-widget my-auto">
+                                <div class="footer-widget__social">
+                                    <a href="#" class="fab fa-facebook-square" href="https://www.facebook.com/vinawebsolution"></a>
+                                </div><!-- /.footer-widget__social -->
+                            </div><!-- /.footer-widget -->
+                        </div><!-- /.col-lg-2 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer-one__upper -->
+            <div class="site-footer-one__bottom">
+                <div class="container">
+                    <p>© Copyright 2022 by <a href="#">El Othmani Oussama</a></p>
+                </div><!-- /.container -->
+            </div><!-- /.site-footer-one__bottom -->
+        </footer><!-- /.site-footer-one -->
+    </div><!-- /.page-wrapper -->
+
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <div class="side-menu__block">
+
+
+        <div class="side-menu__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <div class="side-menu__top justify-content-end">
+
+                <a href="#" class="side-menu__toggler side-menu__close-btn"><img src="{{ url_for('static',filename='images/shapes/close-1-1.png') }}" alt=""></a>
+            </div><!-- /.side-menu__top -->
+
+
+            <nav class="mobile-nav__container">
+                <!-- content is loading via js -->
+            </nav>
+            <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+            <div class="side-menu__content">
+                <p></p>
+                <p><a href="http://www.enmv.agrinet.tn/index.php/fr/">www.enmv.agrinet.tn</a> <br> <a href=":(+216) 71 552 200">(+216) 71 552 200</a></p>
+                <div class="side-menu__social">
+                    <a href="#" class="fab fa-facebook-square" href="https://www.facebook.com/vinawebsolution"></a>
+                </div>
+            </div><!-- /.side-menu__content -->
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+
+
+
+   
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/waypoints.min.js"></script>
+    <script src="../static/js/jquery.counterup.min.js"></script>
+    <script src="../static/js/TweenMax.min.js"></script>
+    <script src="../static/js/wow.js"></script>
+    <script src="../static/js/jquery.magnific-popup.min.js"></script>
+    <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../static/js/jquery.validate.min.js"></script>
+    <script src="../static/js/bootstrap-select.min.js"></script>
+    <script src="../static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../static/js/bootstrap-datepicker.min.js"></script>
+    <script src="../static/js/isotope.js"></script>
+
+    <!-- template scripts -->
+    <script src="../static/js/theme.js"></script>
+    <script src="../static/js/testimonials-owl.carousel.config.js"></script>
+</body>
+
+</html>
