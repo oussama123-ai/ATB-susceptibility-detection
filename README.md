@@ -56,3 +56,6 @@ allows you to choose a prediction model, capture and display images with all the
 # installation :
 
 * pip install requirement.txt
+for the packages :
+pip install astimp-0.0.3-cp310-cp310-linux_x86_64.whl
+pip install SEG-0.0.1-cp310-cp310-linux_x86_64.whl
