@@ -16,8 +16,8 @@ bacteria.
 
 This can be a decision support tool for the doctor or nurse when testing on a diffusion
 plate. Firstly, an improvement to the existing model ASTlib(https://mpascucci.github.io/AST-image-processing/)was given using Tensorflow
-and OpenCV, based on data augmentation techniques (See Part 3.3.1) and it resulted in
-an efficiency of about 80%. Secondly, a model entitled SEGlib was created using Keras
+and OpenCV, based on data augmentation techniques and it resulted in
+an efficiency of about 80%. Secondly, a model entitled SEGlib (https://github.com/oussama123-ai/Classification-of-antibiotic-resistance-) was created using Keras
 and Mask R-CNN in order to optimize the model in terms of execution. As a result, the
 evaluation of the results showed a high efficiency compared to the first model of the order
 of 90.5%.
