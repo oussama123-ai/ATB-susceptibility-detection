@@ -1,4 +1,4 @@
-# Classification-of-antibiotic-resistance
+# Atb susceptibility detection :
 
 Antibiotic resistance has progressively developed and now concerns all pathogenic
 bacteria. It results from the repeated administration of antibiotics in humans or animals,
