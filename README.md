@@ -60,3 +60,13 @@ pip install requirement.txt
 pip install astimp-0.0.3-cp310-cp310-linux_x86_64.whl           
 
 pip install SEG-0.0.1-cp310-cp310-linux_x86_64.whl
+
+# others :
+
+You can get combined results at the same time by runed test.py
+Just you need to :
+* Create folders test and results in desktop
+* put your pictures of prediction in test
+* then correct the path in the code to become compatible with your laptop
+* then you can runed them by the command line
+ Python3 test.py
